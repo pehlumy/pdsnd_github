@@ -3,7 +3,9 @@ import pandas as pd
 import numpy as np
 
 pd.set_option('precision', 1) # Set the precision of our dataframes to one decimal place.
-pd.set_option('display.max_columns', 200) # set to display all columns of raw data to the user
+
+# Instruct pandas to display all exisiting columns of our dataframe
+pd.set_option('display.max_columns', 200)
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',

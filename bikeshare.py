@@ -330,17 +330,6 @@ def main():
         if restart.lower() != 'yes':
             break
 
-
-#### alternative way to display chunks
-def alt():
-    # import tabulate library to use the code
-    while True:
-        display_data = input('\nWould you like to see 5 lines of raw data? Enter yes or no.\n')
-        if display_data.lower() != 'yes':
-            break
-        print(tabulate(df_default.iloc[np.arange(0+i,5+i)], headers ="keys"))
-        i+=5
-
-
+# Use a __main__ block to stop python from running executable statements when script is imported
 if __name__ == "__main__":
 	main()

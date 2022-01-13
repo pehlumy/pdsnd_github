@@ -84,16 +84,16 @@ def get_filters():
     # tell users what the filter is: city,month,day
     print('-'*40)
     if filter == 'all':
-        print('The data you selected is for "{}" city with no time filter'.format(city.title()))
-        print()
+        print('\nThe data you selected is for "{}" city with no time filter'.format(city.title()))
+
     if filter == 'month':
-        print('The data you selected is for "{}" city, filtered by month "{}"'.format(city.title(), month.title()))
-        print()
+        print('\nThe data you selected is for "{}" city, filtered by month "{}"'.format(city.title(), month.title()))
+
     if filter == 'day':
-        print('The data you selected is for "{}" city, filtered by day("{}")'.format(city.title(), day.title()))
-        print()
+        print('\nThe data you selected is for "{}" city, filtered by day("{}")'.format(city.title(), day.title()))
+
     if city  == 'no_input' or filter  == 'no_input' or month  == 'no_input' or day == 'no_input':
-        print("You didn't provide one of the neccessary inputs. Please restart the program")
+        print("\nYou didn't provide one of the neccessary inputs. Please restart the program")
     return city, month, day
 
 
@@ -329,17 +329,6 @@ def main():
 
         if restart.lower() != 'yes':
             break
-
-
-#### alternative way to display chunks
-def alt():
-    # import tabulate library to use the code
-    while True:
-        display_data = input('\nWould you like to see 5 lines of raw data? Enter yes or no.\n')
-        if display_data.lower() != 'yes':
-            break
-        print(tabulate(df_default.iloc[np.arange(0+i,5+i)], headers ="keys"))
-        i+=5
 
 
 if __name__ == "__main__":

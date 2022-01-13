@@ -41,21 +41,21 @@ def get_filters():
 
     while True:
         try:
-            filter = input('\nWould you like to filter the data by month or day? Type "all" for no time filter\n').lower()
-            assert filter in ['month', 'day', 'all']
+            filter_input = input('\nWould you like to filter the data by month or day? Type "all" for no time filter\n').lower()
+            assert filter_input in ['month', 'day', 'all']
             break
         except AssertionError:
             print('\nWrong Input!!!\nType month or day or all')
         except (EOFError, KeyboardInterrupt):
             print('\nTry Again, No input taken')
-            filter = 'no_input'
+            filter_input = 'no_input'
             break
 
-    if filter == 'no_input':
+    if filter_input == 'no_input':
         month = 'no_input'
         day = 'no_input'
 
-    if filter == 'month':
+    if filter_input == 'month':
         # get user input for month (all, january, february, ... , june)
         while True:
             try:
@@ -69,7 +69,7 @@ def get_filters():
                 month = 'no_input'
                 break
 
-    if filter == 'day':
+    if filter_input == 'day':
         # get user input for day of week (all, monday, tuesday, ... sunday)
         while True:
             try:
@@ -85,17 +85,17 @@ def get_filters():
 
     # tell users what the filter is: city,month,day
     print('-'*40)
-    if filter == 'all':
-        print('The data you selected is for "{}" city with no time filter'.format(city.title()))
-        print()
-    if filter == 'month':
-        print('The data you selected is for "{}" city, filtered by month "{}"'.format(city.title(), month.title()))
-        print()
-    if filter == 'day':
-        print('The data you selected is for "{}" city, filtered by day("{}")'.format(city.title(), day.title()))
-        print()
-    if city  == 'no_input' or filter  == 'no_input' or month  == 'no_input' or day == 'no_input':
-        print("You didn't provide one of the neccessary inputs. Please restart the program")
+    if filter_input == 'all':
+        print('\nThe data you selected is for "{}" city with no time filter'.format(city.title()))
+
+    if filter_input == 'month':
+        print('\nThe data you selected is for "{}" city, filtered by month "{}"'.format(city.title(), month.title()))
+
+    if filter_input == 'day':
+        print('\nThe data you selected is for "{}" city, filtered by day("{}")'.format(city.title(), day.title()))
+
+    if city  == 'no_input' or filter_input  == 'no_input' or month  == 'no_input' or day == 'no_input':
+        print("\nYou didn't provide one of the neccessary inputs. Please restart the program")
     return city, month, day
 
 

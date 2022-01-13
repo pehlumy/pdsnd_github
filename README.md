@@ -11,7 +11,11 @@ Explore US Bikeshare Data
 
 
 ### Files used
+Randomly selected data for the first six months of 2017 for three cities:
 
+* chicago.csv
+* washington.csv
+* new_york_city.csv
 
 ### Credits
 https://github.com/udacity/pdsnd_github
